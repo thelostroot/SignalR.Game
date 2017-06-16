@@ -3,6 +3,6 @@
     public enum TrollAnimation
     {
         None,
-        Rotate360
+        Spin
     }
 }

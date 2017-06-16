@@ -3,6 +3,9 @@
     public enum MoveAnimation
     {
         None,
-        Rotate360
+        Spin,
+        Sway,
+        ToBig,
+        Rotate
     }
 }

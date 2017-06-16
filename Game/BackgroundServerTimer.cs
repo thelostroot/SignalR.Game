@@ -22,7 +22,7 @@ namespace SignalR.Game
         private void BroadcastUptimeToClients(object state)
         {
             GameCore.UpdateUnits();
-            _uptimeHub.Clients.All.internetUpTime(DataBase.Units);
+            _uptimeHub.Clients.All.broadcasUnits(DataBase.Units);
         }
 
         public void Stop(bool immediate)

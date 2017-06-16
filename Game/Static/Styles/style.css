@@ -1,41 +1,73 @@
-﻿  .container {
-            background-color: #99CCFF;
-            border: thick solid #808080;
-            padding: 20px;
-            margin: 20px;
-        }
+﻿body {
+    text-align: center;
+}
+ 
+#game {
+     display: inline-block;
+     margin: 0 auto;
+    position: relative;
+    border: 5px solid black;
+ }
 
-        @-moz-keyframes spin {
-    from { -moz-transform: rotate(0deg); }
-    to { -moz-transform: rotate(360deg); }
-}
-@-webkit-keyframes spin {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(360deg); }
-}
+ #score {
+     position: absolute;
+     top: 0;
+     left: 0;
+     padding: 10px;
+     font-family: Arial;
+     font-size: 18px;
+     font-weight: bold;
+ }
+
 @keyframes spin {
+    0% {transform:rotate(0deg);transform-origin: center;}
+    100% {transform:rotate(360deg);transform-origin: center;}
+}
+
+.anim_spin {
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes sway {
     0% {transform:rotate(0deg);transform-origin: center;}
     25% {transform:rotate(30deg);transform-origin: center;}
     75% {transform:rotate(-30deg);transform-origin: center;}   
     100% {transform:rotate(0deg);transform-origin: center;}
 }
 
-@keyframes large {
+.anim_sway {
+    animation-name: sway;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes to_big {
     0% {
-        transform:scale(1,1) rotate(0deg);
+        transform:scale(1,1);
         transform-origin: center;
     }
     50% {
-        transform:scale(4,4) rotate(180deg);
+        transform:scale(3,3);
         transform-origin: center;
     }
     100% {
-        transform:scale(1,1) rotate(360deg);
+        transform:scale(1,1);
           transform-origin: center;
     }
 }
 
-@keyframes large_with_transform {
+.anim_to_big {
+    animation-name: to_big;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes to_big_with_transform {
     0% {
         transform:scale(1,1) rotate(0deg);
         -moz-transform-origin: center;
@@ -48,15 +80,22 @@
     }
     100% {
         transform:scale(1,1) rotate(360deg);
-         -moz-transform-origin: center;
--ms-transform-origin:  center;
--o-transform-origin: center;
--webkit-transform-origin:  center;
-transform-origin: center;
+        -moz-transform-origin: center;
+        -ms-transform-origin:  center;
+        -o-transform-origin: center;
+        -webkit-transform-origin:  center;
+        transform-origin: center;
     }
 }
 
-@keyframes with_3d_transform {
+.anim_to_big_with_transform {
+    animation-name: to_big_with_transform;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
     0% {
         transform:rotateY(0deg);
         transform-origin: center;
@@ -71,9 +110,21 @@ transform-origin: center;
     }
 }
 
-.anim {
-    animation-name: with_3d_transform;
+.anim_rotate {
+    animation-name: rotate;
     animation-duration: 4000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+
+@keyframes tr_spin {
+    0% {transform:rotate(0deg);transform-origin: center;}
+    100% {transform:rotate(360deg);transform-origin: center;}
+}
+
+ .troll_spin {
+    animation-name: tr_spin;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+ }

@@ -14,6 +14,9 @@ namespace SignalR.Game
 
         public void Auth(string name)
         {
+            if(name == null)
+                return;
+            
             UserService.RegisterUser(name, Context.ConnectionId);
             Clients.Caller.initSettings(new GameSettingProxy());
         }
@@ -22,6 +25,7 @@ namespace SignalR.Game
         {
             GameCore.KillUnit(id, Context.ConnectionId);
             Clients.All.broadcastKillUnit(id);
+            Clients.All.broadcastUpdateScore(GameCore.GetScoreList());
         }
 
         public void StartGame()
